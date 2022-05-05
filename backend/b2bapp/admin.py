@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, TeamMember
+from .models import BlogPost, TeamMember, EmailSubscription
 
 # Register your models here.
 @admin.register(BlogPost)
@@ -13,3 +13,5 @@ class BlogPostAdmin(admin.ModelAdmin):
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
     list_display = ('name', 'designation')
+
+admin.site.register(EmailSubscription)
