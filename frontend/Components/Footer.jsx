@@ -1,6 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Footer = () => {
+    const [email, setEmail] = useState("");
+
+    const handleEmailChange = event => setEmail(event.target.value);
+
+    const subscribeEmail = async (event) => {
+        const url = `http://localhost:8000/api/subscribeToEmail/${email}`;
+        console.log(url);
+        const response = await fetch(url, { method: 'POST' });
+        const parsedResponse = await response.json();
+        console.log(parsedResponse);
+    }
+
     return (
         <footer className="bg-gray-100 text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto">
@@ -61,9 +73,9 @@ const Footer = () => {
                         <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
                             <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
                                 <label htmlFor="footer-field" className="leading-7 text-sm text-gray-600">Placeholder</label>
-                                <input type="text" id="footer-field" name="footer-field" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                                <input type="text" value={email} onChange={handleEmailChange} id="footer-field" name="footer-field" className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
-                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                            <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" onClick={subscribeEmail}>Subscribe!</button>
                         </div>
                         <p className="text-gray-500 text-sm mt-2 md:text-left text-center">We won't spam you
                             <br className="lg:block hidden" />Pinky promise ;)
