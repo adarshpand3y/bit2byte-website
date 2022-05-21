@@ -11,6 +11,7 @@ const Footer = () => {
         const response = await fetch(url, { method: 'POST' });
         const parsedResponse = await response.json();
         console.log(parsedResponse);
+        // Todo: show success/error alert
     }
 
     return (

@@ -9,6 +9,7 @@ class BlogPost(models.Model):
     views = models.IntegerField(default=0, help_text=('This statistic is for your reference, do not change it.'))
     publish_date = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
+    category = models.CharField(max_length=10, choices=[("NEWS", 'News'), ("BLOG", 'Blog')], default="BLOG")
     privacy = models.CharField(max_length=10, choices=[("PRIVATE", 'Private'), ("PUBLIC", 'Public')], default="PRIVATE", help_text=('Public posts will appear to everyone and private posts only to you. Change this to private instead of deleting a post.'))
     slug = models.SlugField(max_length=256, blank=True, help_text=('Leave this parameter empty, it will get generated automatically.'))
 
@@ -27,6 +28,8 @@ class TeamMember(models.Model):
     instagramLink = models.CharField(max_length=200, null=True, blank=True)
     twitterLink = models.CharField(max_length=200, null=True, blank=True)
     youtubeLink = models.CharField(max_length=200, null=True, blank=True)
+    githubLink = models.CharField(max_length=200, null=True, blank=True)
+    linkedinLink = models.CharField(max_length=200, null=True, blank=True)
     imageUrl = models.CharField(max_length=200)
     index = models.SmallIntegerField(default=0)
 
