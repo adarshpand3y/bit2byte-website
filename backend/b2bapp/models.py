@@ -4,7 +4,7 @@ from django.utils.text import slugify
 # Create your models here.
 class BlogPost(models.Model):
     title = models.CharField(max_length=256, help_text=('Write the title within 200 characters.'))
-    description = models.TextField(help_text='Write a desctiprion of this blog in a few sentences')
+    metadesc = models.CharField(max_length=512, help_text='Write a desctiprion of this blog in a few sentences')
     body = models.TextField(help_text=('Your main content goes here.'))
     views = models.IntegerField(default=0, help_text=('This statistic is for your reference, do not change it.'))
     publish_date = models.DateTimeField(auto_now_add=True)

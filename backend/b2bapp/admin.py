@@ -4,8 +4,8 @@ from .models import BlogPost, TeamMember, EmailSubscription
 # Register your models here.
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
-    # class Media:
-    #     js = ("tinymce.js",)
+    class Media:
+        js = ("tinymce.js",)
 
     list_display = ('title', 'publish_date', 'privacy', 'views')
     readonly_fields = ['views']

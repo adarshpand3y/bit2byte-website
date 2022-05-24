@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap md:text-left text-center order-first">
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h3 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h3>
                         <nav className="list-none mb-10">
                             <li>
                                 <a className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -36,7 +36,7 @@ const Footer = () => {
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h3 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h3>
                         <nav className="list-none mb-10">
                             <li>
                                 <a className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -53,7 +53,7 @@ const Footer = () => {
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <h3 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h3>
                         <nav className="list-none mb-10">
                             <li>
                                 <a className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -70,7 +70,7 @@ const Footer = () => {
                         </nav>
                     </div>
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE</h2>
+                        <h3 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE</h3>
                         <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
                             <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
                                 <label htmlFor="footer-field" className="leading-7 text-sm text-gray-600">Placeholder</label>
@@ -113,7 +113,7 @@ const Footer = () => {
                         </a>
                         <a className="ml-3 text-gray-500">
                             <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
-                                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12h3z"></path>
                                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
                             </svg>
                         </a>
