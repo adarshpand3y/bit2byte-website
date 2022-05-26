@@ -33,10 +33,8 @@ export default Blog;
 export async function getServerSideProps(context) {
   const slug = context.params.slug
   const url = `http://localhost:8000/api/getParticularBlog/${slug}`;
-  console.log(url);
   const response = await fetch(url);
   const parsedResponse = await response.json();
-  console.log(parsedResponse);
   return {
     props: { parsedResponse }
   }

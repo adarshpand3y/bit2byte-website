@@ -1,17 +1,38 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const Footer = () => {
+const Footer = (props) => {
     const [email, setEmail] = useState("");
 
     const handleEmailChange = event => setEmail(event.target.value);
 
+    function validateEmail(input) {
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (input.match(validRegex)) return true;
+        return false;
+      }
+
     const subscribeEmail = async (event) => {
         const url = `http://localhost:8000/api/subscribeToEmail/${email}`;
-        console.log(url);
-        const response = await fetch(url, { method: 'POST' });
-        const parsedResponse = await response.json();
-        console.log(parsedResponse);
-        // Todo: show success/error alert
+        if(!validateEmail(email)) {
+            props.showToast("That email seems invalid 👀. Please take a look.", "error");
+            return;
+        }
+        try {
+            const response = await fetch(url, { method: 'POST' });
+            const parsedResponse = await response.json();
+            if (parsedResponse.success == "Subscribed successfully!") {
+                props.showToast("Congrats!🎉 Subscribed successfully!", "success");
+            }
+            else if (parsedResponse.error == "That email is already subscribed!") {
+                props.showToast("That email is already subscribed!", "warning");
+            }
+            else {
+                props.showToast("Internal server error ocurred.", "warning");
+            }
+        }
+        catch(e) {
+            props.showToast("Network error when contacting server.", "error");
+        }
     }
 
     return (

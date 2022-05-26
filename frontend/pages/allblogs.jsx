@@ -23,9 +23,7 @@ export default allblogs;
 export async function getServerSideProps(context) {
     const url = `http://localhost:8000/api/getblogs`;
     const response = await fetch(url);
-    console.log(response);
     const parsedResponse = await response.json();
-    console.log(parsedResponse);
     return {
         props: { parsedResponse }
     }

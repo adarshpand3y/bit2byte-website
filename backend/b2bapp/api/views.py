@@ -6,7 +6,6 @@ from .serializers import BlogPostSerializer, TeamMemberSerializer
 
 @api_view(["GET"])
 def getBlogs(request):
-    print("called")
     blogs = BlogPost.objects.all()
     serializedBlogs = BlogPostSerializer(blogs, many=True)
     return Response(serializedBlogs.data)

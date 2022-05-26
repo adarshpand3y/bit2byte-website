@@ -4,7 +4,6 @@ import styles from '../styles/Home.module.css'
 import TeamMembers from '../Components/TeamMembers';
 
 export default function Home({parsedResponse}) {
-  // console.log(parsedResponse.blogs)
 
   return (
     <div className={""}>
@@ -42,7 +41,6 @@ export async function getServerSideProps(context) {
   const url = `http://localhost:8000/api/getHomeDetails`;
     const response = await fetch(url);
     const parsedResponse = await response.json();
-    console.log(parsedResponse);
   return {
     props: {parsedResponse}
   }

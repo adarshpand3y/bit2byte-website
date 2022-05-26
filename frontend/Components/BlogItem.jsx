@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link';
 
 const BlogItem = ({ details }) => {
-    console.log(details);
     const timestamp = Date.parse(details.publish_date);
     const d = new Date(timestamp);
     return (<>
